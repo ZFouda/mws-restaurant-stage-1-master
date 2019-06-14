@@ -18,13 +18,15 @@
   <!-- Beginning header -->
   <header>
     <!-- Beginning nav -->
-    <nav>
+    <nav id='nav-head'>
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
-      <li><a href="/">Home</a></li>
-    </ul>
+    <nav role="navigation" aria-label="Breadcrumb">
+      <ul id="breadcrumb">
+        <li><a href="/">Home</a></li>
+      </ul>
+    </nav>
     <!-- End breadcrumb -->
     <!-- End nav -->
   </header>
@@ -40,7 +42,7 @@
     <!-- Beginning restaurant -->
     <section id="restaurant-container" tabindex="0" aria-label="Restaurant Details">
 
-        <h1 id="restaurant-name" aria-label="Restaurant name" tabindex="0"></h1>
+        <h2 id="restaurant-name" aria-label="Restaurant name" tabindex="0"></h2>
         <div id="floatL-card-container">
         <img id="restaurant-img" aria-label="Picture of Restaurant" tabindex="0" aria-label="Image of the Restaurant">
         <p id="restaurant-cuisine" aria-label="Restaurant cuisine type" tabindex="0"></p>

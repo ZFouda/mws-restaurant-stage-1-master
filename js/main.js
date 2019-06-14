@@ -4,7 +4,9 @@ let restaurants,
 var newMap
 var markers = []
 
-
+/**
+ * Service worker Registration
+ */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('/sw.js',{scope: './'})
@@ -178,7 +180,7 @@ createRestaurantHTML = (restaurant) => {
   image.alt = `Picture of ${restaurant.name}`;
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   li.append(name);
 

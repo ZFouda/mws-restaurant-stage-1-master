@@ -2,6 +2,22 @@ let restaurant;
 var newMap;
 
 /**
+ * Service worker Registration
+ */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js',{scope: './'})
+    .then(function(registration) {
+      // Registration successful
+      console.log('ServiceWorker registration successful');
+    })
+    .catch(function(error) {
+      // Registration failure :(
+      console.log('ServiceWorker registration failure');
+    });
+  });
+}
+/**
  * Initialize map as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -127,7 +143,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  const title = document.createElement('h2');
+  const title = document.createElement('h3');
   title.innerHTML = 'Reviews';
   container.appendChild(title);
 
